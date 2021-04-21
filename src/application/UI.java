@@ -28,7 +28,12 @@ public class UI {
 	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
 	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 	
-	public static ChessPosition readChessPosition(Scanner sc) {
+	public static void clear_Screen() {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();	
+	}
+	
+	static ChessPosition readChessPosition(Scanner sc) {
 		try {
 			String s = sc.nextLine();
 			char column = s.charAt(0);
